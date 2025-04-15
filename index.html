@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <title>Temperature Tracker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-color: antiquewhite;
+      font-size: 16px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      font-size: 16px;
+    }
+    button {
+  margin: 8px 0;
+}
+    .entry {
+      background: #f2f2f2;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+    @media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Smaller font for mobile */
+  }
+}
+  </style>
+</head>
+<body>
+
+  <h1>Daily Temperature Tracker</h1>
+
+  <div>
+    <h2>🌅 Morning</h2>
+    <input type="number" id="morningTemp" placeholder="Enter morning temp">
+    <button onclick="saveShift('morning')">Save Morning</button>
+  </div>
+
+  <div>
+    <h2>☀️ Afternoon</h2>
+    <input type="number" id="afternoonTemp" placeholder="Enter afternoon temp">
+    <button onclick="saveShift('afternoon')">Save Afternoon</button>
+  </div>
+
+  <div>
+    <h2>🌇 Evening</h2>
+    <input type="number" id="eveningTemp" placeholder="Enter evening temp">
+    <button onclick="saveShift('evening')">Save Evening</button>
+  </div>
+
+  <div>
+    <h2>🌙 Night</h2>
+    <input type="number" id="nightTemp" placeholder="Enter night temp">
+    <button onclick="saveShift('night')">Save Night</button>
+  </div>
+
+  <h2>📋 Previous Logs</h2>
+  <div id="log"></div>
+  <button onclick="downloadPDF()">🧾 Download PDF</button>
+
+  <button onclick="clearLogs()">🗑️ Clear All Logs</button>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
